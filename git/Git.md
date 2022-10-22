@@ -18,6 +18,6 @@
 * to view list of branches -> git branch
 * to create new branch and switch to it -> git branch -b new_branch_name
 
-working directory -> (git add) -> staging area -> (git commit) -> repository
+## step-wise process of git:
 
-![Syep-wise process]([https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fpng-shmxs&psig=AOvVaw3BZBfPAKl4vrbhIrPtBDRx&ust=1666543280472000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCPjs39Oj9PoCFQAAAAAdAAAAABAK](https://www.google.com/imgres?imgurl=https%3A%2F%2Fe7.pngegg.com%2Fpngimages%2F473%2F303%2Fpng-clipart-git-commit-repository-version-control-branching-lifecycle-angle-text.png&imgrefurl=https%3A%2F%2Fwww.pngegg.com%2Fen%2Fpng-shmxs&tbnid=djtqfFVqeFEwfM&vet=12ahUKEwi3wZPTo_T6AhXmgmMGHeB_Bm8QMygaegUIARD2AQ..i&docid=aaAcPz4yPah3BM&w=900&h=396&q=git%20lifecycle&ved=2ahUKEwi3wZPTo_T6AhXmgmMGHeB_Bm8QMygaegUIARD2AQ))
+working directory -> (git add) -> staging area -> (git commit) -> repository

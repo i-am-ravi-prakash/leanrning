@@ -8,4 +8,6 @@
 
 ## Why to use design patterns?
 
-The aim of **Design Patterns** 
+The aim of **Design Patterns** is to make software design more understandable and maintainable.
+
+> Bad programmers worry about the code, good programmers worry about data structure and their relationship.

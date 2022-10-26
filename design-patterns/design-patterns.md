@@ -26,4 +26,5 @@ The aim of **Design Patterns** is to make software design more understandable an
 | Tight coupling | Loose coupling |
 | -------------- | -------------- |
 | Classes are highly dependent on each other | Classes are independent of each other |
-| This typically happend when classes have too many responsibilities | 
+| This typically happend when classes have too many responsibilities | Interfaces (or Abstractions) can be used to achieve this feature using SOLID principles |
+

@@ -38,7 +38,36 @@ This is because the array size is fixed to be 10. And it can't be changed at the
 | ----- | ---------- |
 | Array is fixed in size.| Collection is growable in nature.|
 | Array is not recommended memory wise. | Collection is recommended memory wise. |
-| WRT array is not a good choice. | WRT collection is recommended. |
+| WRT preformance array is not a good choice. | WRT preformance collection is recommended. |
 | It can hold only homogeneous data. | It can hold both homogeneous and heterogeneous data. |
 | There is no underlying data structure for array. | Collections have been imoplemented on standard data structure. |
 | Array can hold both primitive data types and objects. | Collections can hold only object data types. |
+
+
+**When we want to represent a group of individual objects as a single entity, we should go for Collection. Collection framework defines several Classes and interfaces which is used to represent Collection. **
+
+## 9 key interfaces of Collection framework
+
+## Collection interface
+
+- If we want to represent a group of individual objects as a single entity then we should go for Collection.
+- Collection interface defines most commonly used methods which are applicable to any Collection object.
+- In general, Collection interface is considered as the root interface of Collection framework.
+
+**NOTE**: There is no concrete class which implements Collection interface directly.
+
+**Differences between Collection and Collections**:
+
+- Collection is an interface which is used to represent a group of individual objects as a single entity.
+- Collections is an utility class present in java.util package which defines several method like sorting, searching, etc. for various Collection objects.
+
+
+## List interface
+
+- List is a child interface of Collection.
+- List is an interface which is used to represent a group of individual objects as a single entity where duplicates are allowed and order of elements must be maintained.
+- Belows are the implementation classes of List interface:
+ i. ArrayList
+ ii. LinkedList
+ iii. Vector
+ iv. Stack

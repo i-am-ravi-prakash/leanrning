@@ -67,7 +67,7 @@ This is because the array size is fixed to be 10. And it can't be changed at the
 - List is a child interface of Collection.
 - List is an interface which is used to represent a group of individual objects as a single entity where duplicates are allowed and order of elements must be maintained.
 - Belows are the implementation classes of List interface:
- - ArrayList
- - LinkedList
- - Vector
- - Stack
+  - ArrayList
+  - LinkedList
+  - Vector
+  - Stack

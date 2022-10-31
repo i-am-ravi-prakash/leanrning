@@ -7,6 +7,7 @@ int len = rollNumber.length;
 for(int i = 0; i < len; i++){
   System.out.println(rollNumber[i]);
 }
+```
 
 But array comes with some limitation which are as follows:
 

@@ -71,3 +71,11 @@ This is because the array size is fixed to be 10. And it can't be changed at the
   - LinkedList
   - Vector
   - Stack
+
+
+## Set interface
+
+- It is child interface of Collection.
+- It is used to represent a group of individual object as a single entity where duolicates are not allowen and order of elements doesn't not need to be maintained.
+
+**NOTE**: HashSet is the implementation class of Set interface. LikedHashSet is child class of HashSet.

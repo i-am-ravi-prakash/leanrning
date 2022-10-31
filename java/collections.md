@@ -6,4 +6,4 @@ Array is preferable when we have to store a lot of data let's say roll numbers o
 int len = rollNumber.length;
 for(int i = 0; i < len; i++){
   System.out.println(rollNumber[i]);
-}```
+}

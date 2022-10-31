@@ -21,3 +21,7 @@ To overcome the above problems of array, collections were introduced. Below are 
 - Collections are growable in nature. At runtime size can incease or decrease.
 - Collections can hold homogeneous or heterogenous data elements.
 - Every collection class has been implenented on some standard data structure.
+
+**NOTE**: If number of elements is known, it's a good choise to go with array instead of collection.
+
+Let's say we have an array of size 10.

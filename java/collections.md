@@ -7,3 +7,9 @@ int len = rollNumber.length;
 for(int i = 0; i < len; i++){
   System.out.println(rollNumber[i]);
 }
+
+But array comes with some limitation which are as follows:
+
+- Array is fixed in size.
+- Array can contain homogeneous data types.
+- There is no underlying data structure for arrays.

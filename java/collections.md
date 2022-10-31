@@ -76,6 +76,34 @@ This is because the array size is fixed to be 10. And it can't be changed at the
 ## Set interface
 
 - It is child interface of Collection.
-- It is used to represent a group of individual object as a single entity where duolicates are not allowen and order of elements doesn't not need to be maintained.
+- It is used to represent a group of individual object as a single entity where duolicates are not allowed and order of elements doesn't not need to be maintained.
 
 **NOTE**: HashSet is the implementation class of Set interface. LikedHashSet is child class of HashSet.
+
+Differeneces between List and Set interfaces:
+
+| List | Set |
+| ---- | --- |
+| Duplocates are allowed.| Duplicates are not allowed. |
+| Order of elements is maintained. | Order of elements are not maintained. |
+
+## SortedSet interface
+
+- SortedSet is child interface of Set.
+- It is used to represent a group of individual object as a single entity where duolicates are not allowed and all the elements must be inserted in sorted manner.
+
+
+## NavigableSet interface
+
+- It is a child interface of SortedSet. It defines variuos methods for navigation purposes.
+- TreeSet is implementation class of NavigableSet interface.
+
+
+## Queue interface
+
+- It is a child interface of Collection.
+- If we want to represent a group of individual objects prior to processing then we should go for Queue.
+- Two implementation classes of Queue interface are PriorityQueue and BlockingQueue.
+- LinkedBlockingQueue and PrioriryBlockingQueue are the two child class of BlockingQueue.
+
+**If we want to represent a group as key value pair then we should go for Map interface.**

@@ -32,3 +32,13 @@ arr[10] = 10;
 
 This is because the array size is fixed to be 10. And it can't be changed at the runtime. Let's take the same example with ArrayList. If we create an arrayList, internally one list is created with some size which we don't know. Let's say the list is full and we are trying to add one more element to that list. Internally, one new list will be created with size greater than the previous one and all the data of the previous list will be copied in the newly create one and reference will be changed from previous list to the new one and garbage collector will destroy the previous list. So, we can see using collection is a costly operation. that's why it's recommended to use array if the size is already known to us.
 
+## Differences between arrays and collections:
+
+| Array | Collection |
+| ----- | ---------- |
+| Array is fixed in size.| Collection is growable in nature.|
+| Array is not recommended memory wise. | Collection is recommended memory wise. |
+| WRT array is not a good choice. | WRT collection is recommended. |
+| It can hold only homogeneous data. | It can hold both homogeneous and heterogeneous data. |
+| There is no underlying data structure for array. | Collections have been imoplemented on standard data structure. |
+| Array can hold both primitive data types and objects. | Collections can hold only object data types. |

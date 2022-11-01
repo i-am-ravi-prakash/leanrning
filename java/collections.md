@@ -48,7 +48,7 @@ This is because the array size is fixed to be 10. And it can't be changed at the
 
 ## 9 key interfaces of Collection framework
 
-## Collection interface
+## 1. Collection interface
 
 - If we want to represent a group of individual objects as a single entity then we should go for Collection.
 - Collection interface defines most commonly used methods which are applicable to any Collection object.
@@ -62,7 +62,7 @@ This is because the array size is fixed to be 10. And it can't be changed at the
 - Collections is an utility class present in java.util package which defines several method like sorting, searching, etc. for various Collection objects.
 
 
-## List interface
+## 2. List interface
 
 - List is a child interface of Collection.
 - List is an interface which is used to represent a group of individual objects as a single entity where duplicates are allowed and order of elements must be maintained.
@@ -73,7 +73,7 @@ This is because the array size is fixed to be 10. And it can't be changed at the
   - Stack
 
 
-## Set interface
+## 3. Set interface
 
 - It is child interface of Collection.
 - It is used to represent a group of individual object as a single entity where duolicates are not allowed and order of elements doesn't not need to be maintained.
@@ -87,19 +87,19 @@ Differeneces between List and Set interfaces:
 | Duplocates are allowed.| Duplicates are not allowed. |
 | Order of elements is maintained. | Order of elements are not maintained. |
 
-## SortedSet interface
+## 4. SortedSet interface
 
 - SortedSet is child interface of Set.
 - It is used to represent a group of individual object as a single entity where duolicates are not allowed and all the elements must be inserted in sorted manner.
 
 
-## NavigableSet interface
+## 5. NavigableSet interface
 
 - It is a child interface of SortedSet. It defines variuos methods for navigation purposes.
 - TreeSet is implementation class of NavigableSet interface.
 
 
-## Queue interface
+## 6. Queue interface
 
 - It is a child interface of Collection.
 - If we want to represent a group of individual objects prior to processing then we should go for Queue.
@@ -107,3 +107,35 @@ Differeneces between List and Set interfaces:
 - LinkedBlockingQueue and PrioriryBlockingQueue are the two child class of BlockingQueue.
 
 **If we want to represent a group as key value pair then we should go for Map interface.**
+
+
+## 7. Map interface
+
+- Map is not a child interface of Collection.
+- If we want to represent a group of key-value pairs, then we should go for Map interface.
+- Both key and value are objects.
+- Duplicate keys are not allowed however we can have duplicate value.
+
+
+Below are the implementation classes of Map interface:
+1. HashMap
+2. WeakHashMap
+3. IdentityHashMap
+4. Hashtable
+
+- LinkedHashMap is child class of HashMap.
+- Hashtable is child class of Dictionary.
+- Properties is the child class of hashtable.
+
+
+## 8. Sortedmap interface
+
+- It is a child interface of Map.
+- If we want to represent a group of key value pair in some sorting order of keys, then we should go for SortedMap.
+
+
+## 9. NavigableMap interface
+
+- It is a child interface of SortedMap.
+- It defines several utility methods for navigation purposes.
+- TreeMap is the implementation class of NavigableMap interface.

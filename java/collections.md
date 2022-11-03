@@ -139,3 +139,37 @@ Below are the implementation classes of Map interface:
 - It is a child interface of SortedMap.
 - It defines several utility methods for navigation purposes.
 - TreeMap is the implementation class of NavigableMap interface.
+
+
+
+# Collection Interface
+
+- If we want to represent a group of individual objects as a single entity then we should go for Collection.
+- Collection interface defines most commonly used methods which are applicable to any Collection object.
+- In general, Collection interface is considered as the root interface of Collection framework.
+
+Below are the important methods of Collection interface:
+
+1. boolean add(Object o)  It adds an object into collection
+2. boolean addAll(Collection c) It add a group of objects into collection
+3. boolean remove(Object o) It removes the given object from collection
+4. boolean removeAll(Collection c)  It removes a group of objects from collection
+5. boolean retailAll(Collection c)  It removes all objects from the collectoin except for the given one
+6. void clear() It clears the Collection
+7. boolean contains(Object o) It checks whether the given object is present in the Collection or not
+8. boolean containsAll(Collection c)  It checks if the list of given object is present or not in the Collection
+9. boolean isEmpty()  It checks if the Collection is empty
+10. int size()  It returns the size of the Collection
+11. Object[] toArray()  It converts the Collection to the object array
+12. Iterator iterator() It iterates through the objects present in the Collection one by one.
+
+**NOTE**: Collection interface doesn't contain any method to retrieve objects as there is not concrete class which implements Collection interface directaly.
+
+
+
+# List Interface
+
+- List is a child interface of Collection.
+- List is an interface which is used to represent a group of individual objects as a single entity where duplicates are allowed and order of elements must be maintained.
+- We can differentiate duplicates by using index, and we can maintain the insertion order by using index. Hence, index plays a very important role in List interface.
+

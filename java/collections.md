@@ -150,18 +150,18 @@ Below are the implementation classes of Map interface:
 
 Below are the important methods of Collection interface:
 
-1. boolean add(Object o)  It adds an object into collection
-2. boolean addAll(Collection c) It add a group of objects into collection
-3. boolean remove(Object o) It removes the given object from collection
-4. boolean removeAll(Collection c)  It removes a group of objects from collection
-5. boolean retailAll(Collection c)  It removes all objects from the collectoin except for the given one
-6. void clear() It clears the Collection
-7. boolean contains(Object o) It checks whether the given object is present in the Collection or not
-8. boolean containsAll(Collection c)  It checks if the list of given object is present or not in the Collection
-9. boolean isEmpty()  It checks if the Collection is empty
-10. int size()  It returns the size of the Collection
-11. Object[] toArray()  It converts the Collection to the object array
-12. Iterator iterator() It iterates through the objects present in the Collection one by one.
+- **boolean add(Object o)**  It adds an object into collection
+- **boolean addAll(Collection c)** It add a group of objects into collection
+- **boolean remove(Object o)** It removes the given object from collection
+- **boolean removeAll(Collection c)**  It removes a group of objects from collection
+- **boolean retailAll(Collection c)**  It removes all objects from the collectoin except for the given one
+- **void clear()** It clears the Collection
+- **boolean contains(Object o)** It checks whether the given object is present in the Collection or not
+- **boolean containsAll(Collection c)**  It checks if the list of given object is present or not in the Collection
+- **boolean isEmpty()**  It checks if the Collection is empty
+- **int size()**  It returns the size of the Collection
+- **Object[] toArray()**  It converts the Collection to the object array
+- **Iterator iterator()** It iterates through the objects present in the Collection one by one.
 
 **NOTE**: Collection interface doesn't contain any method to retrieve objects as there is not concrete class which implements Collection interface directaly.
 
@@ -173,3 +173,31 @@ Below are the important methods of Collection interface:
 - List is an interface which is used to represent a group of individual objects as a single entity where duplicates are allowed and order of elements must be maintained.
 - We can differentiate duplicates by using index, and we can maintain the insertion order by using index. Hence, index plays a very important role in List interface.
 
+**NOTE**: All the methods defined in the Collection interface are available in List interface. There are some List interface specific methods which are as follows:
+
+- **void add(int index, Object o)** It adds the object into the list at the given index.
+- **boolean addAll(int index, Collection c)** It adds the collection at the given index.
+- **Object get(int index)** It returns the object present at the given index, returns null if anything is not present the given index.
+- **Object set(int index, Object newObj)**  It updates the value of object present at the given index with the new object and returns the old object.
+- **int indexOf(Object o)** It return the index of first occurence of object.
+- **int lastIndexOf(Object o)** It returns the last index of occurence of the object.
+- **Iterator iterator()** It is used to to iterate through the list.
+
+There are three implementation classes of List interface:
+1. ArrayList
+2. LinkedList
+3. Vector
+
+Stack is the child class of Vector.
+
+
+
+# ArrayList
+
+This is the implementation class of List interface.
+
+- The underlying data structure of ArrayList is resizable or growable array.
+- Duplicates are allowed.
+- Insertion order is maintained.
+- Heteregeneous objects are allowed.
+- Null insertion is possible.

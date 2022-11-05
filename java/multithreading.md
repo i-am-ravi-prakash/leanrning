@@ -89,3 +89,27 @@ public class MyThreadC extends Thread{
 <img width="1205" alt="Screenshot 2022-11-04 at 2 46 42 PM" src="https://user-images.githubusercontent.com/84272788/200106617-ae1a63ac-798f-4697-bd45-3e3ba81b33d0.png">
 
 When we create the thread and call the start() method it'll go in Runnable state. Runnable state means waiting state. Once thread scheduler pick the newly created thread, it's in Running state. While in running state, if the thread encounters sleep(), wait() or has to wait for any I/O it goes in Non Runnable (Blocked) state. Once sleep(), wait() or I/O is completed, the thread again goes back to Runnable state and from there it'll be picked by thread scheduler. After finishing the operation or calling stop() on the thread, it's finally terminated.
+
+
+## Thread Operations
+
+- Thread class provides several methods to perform operations with threads.
+- Thread class is available in java.lang package so we don't need to import this.
+- Followings are some of the importants methods provided for thread oprations:
+	- **public String getName()**: returns the name of thread
+	- **public void setname(String name)**: sets the thread name
+	- **public void run()**: contains the task of thread
+	- **public void start()**: start thread by allocating resources
+	- **public long getId()**: returns id of thread
+	- **setPriority(p)**: set the priority of any thread
+	- **getPriority()**: get the priority of any thread
+	- **sleep(), wait(), join(), interrupt(), resume(), stop()**
+
+
+
+## Daemon thread
+
+- Daemon thread in Java is service provider thread which provides service to user defined threads.
+- **setDaemon(Boolean)**: set any thread to daemon thread
+- **public boolean isDaemon()**: returns true if the thread is daemon thread, false otherwise
+- Garbage collector is the best example of Daemon thread.

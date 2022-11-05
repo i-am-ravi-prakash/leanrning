@@ -113,3 +113,16 @@ When we create the thread and call the start() method it'll go in Runnable state
 - **setDaemon(Boolean)**: set any thread to daemon thread
 - **public boolean isDaemon()**: returns true if the thread is daemon thread, false otherwise
 - Garbage collector is the best example of Daemon thread.
+
+
+## Producer Consumer Problem
+
+The producer-consumer problem is an example of a multi-process synchronization problem. The problem describes two processes, the producer and the consumer that shares a common fixed-size buffer use it as a queue.
+
+- The producer’s job is to generate data, put it into the buffer, and start again.
+- At the same time, the consumer is consuming the data (i.e., removing it from the buffer), one piece at a time.
+
+**Problem**
+
+Given the common fixed-size buffer, the task is to make sure that the producer can’t add data into the buffer when it is full and the consumer can’t remove data from an empty buffer.
+

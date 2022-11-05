@@ -30,3 +30,62 @@ Let's say IDM (Internet Download Manager) software is downloading three files fr
 There are two ways to create threads in Java:
 1. Implementing Runnable interface
 2. Extending Thread class
+
+### Thread creation by implementing Runnable interface
+
+```
+public class MyThreadI implements Runnable{
+
+    public static void main(String[] args) {
+        MyThreadI myThreadI = new MyThreadI();
+        Thread threadI = new Thread(myThreadI);
+        threadI.start();
+    }
+
+	@Override
+    public void run() {
+        for (int i = 0; i <= 10; i++) {
+            System.out.println("Downloading reports.ppt. Progress ... " + (i * 10) + "%");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("" + e.getMessage());
+            }
+        }
+        System.out.println("Download completed");
+    }
+
+}
+```
+
+### Thread creation by extending Thread class
+
+```
+public class MyThreadC extends Thread{
+    
+    public static void main(String[] args) {
+        MyThreadC myThreadC = new MyThreadC();
+        myThreadC.start();
+    }
+    
+    public void run() {
+        for (int i = 0; i <= 10; i++) {
+            System.out.println("Downloading song.mp3. Progress... " + (i * 10) + "%");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("" + e.getMessage());
+            }
+        }
+    }
+}
+```
+
+**NOTE**: There is always one main thread which is created by the JVM
+
+
+## Life cycle of Thread
+
+<img width="1205" alt="Screenshot 2022-11-04 at 2 46 42 PM" src="https://user-images.githubusercontent.com/84272788/200106617-ae1a63ac-798f-4697-bd45-3e3ba81b33d0.png">
+
+When we create the thread and call the start() method it'll go in Runnable state. Runnable state means waiting state. Once thread scheduler pick the newly created thread, it's in Running state. While in running state, if the thread encounters sleep(), wait() or has to wait for any I/O it goes in Non Runnable (Blocked) state. Once sleep(), wait() or I/O is completed, the thread again goes back to Runnable state and from there it'll be picked by thread scheduler. After finishing the operation or calling stop() on the thread, it's finally terminated.

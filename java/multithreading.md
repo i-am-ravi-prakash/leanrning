@@ -1,6 +1,6 @@
 # Multithreading in Java
 
-### Contents
+## Contents
 
 - Introduction
 - Process, Thread, Multitasking, Multithreading, Multiprocessing
@@ -13,8 +13,12 @@
 
 ## Introduction
 
+Threads are basically the lightweight and smallest unit of processing that can be managed independently by a scheduler. It is considered the simplest way to take advantage of multiple CPUs available in a machine. They share the common address space and are independent of each other.
+
 - Multithreading in Java is a process of executing multiple threads simultaneously.
 - A thread is a lightweight sub-process, the smallest unit of processing.
+
+<img width="803" alt="Screenshot 2022-11-06 at 10 11 23 AM" src="https://user-images.githubusercontent.com/84272788/200154586-ad3cf93e-61f3-4d15-8099-b64a050d8389.png">
 
 If multiple processes are being executed simulatneously, it's called multi-processing.
 
@@ -23,6 +27,28 @@ Let's say, I am working on my computer. I am playing my favourite song on it, an
 If multiple threads are running to complete one process, it's called multi-threading.
 
 Let's say IDM (Internet Download Manager) software is downloading three files from the internet simultaneously. As we know thread is the smallest unit of processing so here thread will come into picture. There will be one thread downloading one file My_Fav_Song.mp4, one separate thread will be downloading one file Reports.pdf and another thread is downloading Employee.xls from internet. Here we can see, in a single process (downloading of file(s) from internet) there are multiple threads working. This is an example of multi-threading.
+
+**Benefits of multithreading**
+
+- Allow the program to run continuously even if a part of it is blocked.
+- Allows to write effective programs that utilize maximum CPU time.
+- Increase use of CPU resources and reduce costs of maintenance.
+- If an exception occurs in a single thread, it will not affect other threads as threads are independent.
+
+**Difference between thread and process**
+
+**Process**: It simply refers to a program that is in execution i.e., an active program. A process can be handled using PCB (Process Control Block).
+
+**Thread**: It simply refers to the smallest units of the particular process. It has the ability to execute different parts (referred to as thread) of the program at the same time.
+
+| Thread | Process |
+| ------ | ------- |
+| It is a subset of a subunit of a process. | It is a program in execution containing multiple threads. |
+| In this, inter-thread communication is faster, less expensive, easy and efficient because threads share the same memory address of the process they belong to.| In this, inter-process communication is slower, expensive, and complex because each process has different memory space or address. |
+| It requires less time for creation, termination, and context switching. | It requires more time for creation, termination, and context switching. |
+| Processes with multiple threads use fewer resources. | Processes without threads use more resources. |
+| There is a need for synchronization in threads to avoid unexpected scenarios or problems. | There is no need for synchronization in each process. |
+| Threads are parts of a process, so they are dependent on each other but each thread executes independently. | Processes are independent of each other. |
 
 
 ## Creating threads in Java
@@ -114,6 +140,69 @@ When we create the thread and call the start() method it'll go in Runnable state
 - **public boolean isDaemon()**: returns true if the thread is daemon thread, false otherwise
 - Garbage collector is the best example of Daemon thread.
 
+**What's the difference between User thread and Daemon thread?**
+
+User and Daemon are basically two types of thread used in Java by using a ‘Thread Class’.  
+
+**User Thread (Non-Daemon Thread):** In Java, user threads have a specific life cycle and its life is independent of any other thread. JVM (Java Virtual Machine) waits for any of the user threads to complete its tasks before terminating it. When user threads are finished, JVM terminates the whole program along with associated daemon threads. 
+
+**Daemon Thread:** In Java, daemon threads are basically referred to as a service provider that provides services and support to user threads. There are basically two methods available in thread class for daemon thread: setDaemon() and isDaemon().
+
+| User Thread | Daemon Thread |
+| ----------- | ------------- |
+| These threads are normally created by the user for executing tasks concurrently. | These threads are normally created by JVM. |
+| They are used for critical tasks or core work of an application. | They are not used for any critical tasks but to do some supporting tasks. |
+| These threads are referred to as high-priority tasks, therefore are required for running in the foreground. | These threads are referred to as low priority threads, therefore are especially required for supporting background tasks like garbage collection, releasing memory of unused objects, etc. |
+| JVM waits for user threads to finish their tasks before termination. | JVM does not wait for daemon threads to finish their tasks before termination. |
+
+
+**How can we create daemon threads?**
+
+We can create daemon threads in java using the thread class method **setDaemon(true)**. It is used to mark the current thread as daemon thread or user thread. **isDaemon()** method is generally used to check whether the current thread is daemon or not. If the thread is a daemon, it will return true otherwise it returns false.
+
+**Program to illustrate the use of setDaemon() and isDaemon() method.**
+
+```
+/**
+ * @author raviprakash
+ *
+ */
+public class DaemonThread extends Thread{
+    
+    public DaemonThread(String name) {
+        super(name);
+    }
+    
+    public void run() {
+        if (Thread.currentThread().isDaemon()) {
+            System.out.println(getName() + " is Daemon thread");
+        } else {
+            System.out.println(getName() + " user thread");
+        }
+    }
+    
+    public static void main(String[] args) {
+        DaemonThread t1 = new DaemonThread("t1");
+        DaemonThread t2 = new DaemonThread("t2");
+        DaemonThread t3 = new DaemonThread("t3");
+        
+        t1.setDaemon(true);
+        t1.start();
+        t2.start();
+        t3.setDaemon(true);
+        t3.start();
+    }
+}
+```
+
+Output:
+```
+t1 is Daemon thread 
+t3 is Daemon thread 
+t2 is User thread
+```
+
+**NOTE**: But we can only call the setDaemon() method before start() method otherwise it will definitely throw IllegalThreadStateException.
 
 ## Producer Consumer Problem
 

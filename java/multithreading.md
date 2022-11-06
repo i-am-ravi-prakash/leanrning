@@ -124,12 +124,16 @@ When we create the thread and call the start() method it'll go in Runnable state
 - Followings are some of the importants methods provided for thread oprations:
 	- **public String getName()**: returns the name of thread
 	- **public void setname(String name)**: sets the thread name
-	- **public void run()**: contains the task of thread
-	- **public void start()**: start thread by allocating resources
+	- **public void run()**: the run() method is used to start or begin the execution of the same thread. When the run() method is called, no new thread is created as in the case of the start() method. This method is executed by the current thread. One can call the run() method multiple times.
+	- **public void start()**: In simple words, the start() method is used to start or begin the execution of a newly created thread. When the start() method is called, a new thread is created and this newly created thread executes the task that is kept in the run() method. One can call the start() method only once.
 	- **public long getId()**: returns id of thread
 	- **setPriority(p)**: set the priority of any thread
 	- **getPriority()**: get the priority of any thread
-	- **sleep(), wait(), join(), interrupt(), resume(), stop()**
+	- **wait()**: As the name suggests, it is a non-static method that causes the current thread to wait and go to sleep until some other threads call the notify () or notifyAll() method for the object’s monitor (lock). Mostly used for inter-thread communication.
+	- **sleep()**:  As the name suggests, it is a static method that pauses or stops the execution of the current thread for some specified period.
+	- **notify()**: It sends a notification and wakes up only a single thread instead of multiple threads that are waiting on the object’s monitor.
+	- **notifyAll()**: It sends notifications and wakes up all threads and allows them to compete for the object's monitor instead of a single thread.
+	- **join()**: This method is generally used to pause the execution of a current thread unless and until the specified thread on which join is called is dead or completed.
 
 
 

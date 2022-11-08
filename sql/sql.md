@@ -1,4 +1,4 @@
-# ntroduction to SQL
+# Introduction to SQL
 
 SQL stands for Standard Query Language which is used to store, manipulate and retrieve data in database.
 
@@ -24,3 +24,5 @@ Every table is broken up into smaller entities called fields. A field is a colum
 A record, also called a row, is each individual entry that exists in a table. A record is a horizontal entity in a table.
 
 A column is a vertical entity in a table that contains all information associated with a specific field in a table.
+
+**NOTE**: SQL keywords are not case-sensitive. select is the same as SELECT

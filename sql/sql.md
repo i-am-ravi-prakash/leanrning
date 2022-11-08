@@ -26,3 +26,48 @@ A record, also called a row, is each individual entry that exists in a table. A 
 A column is a vertical entity in a table that contains all information associated with a specific field in a table.
 
 **NOTE**: SQL keywords are not case-sensitive. select is the same as SELECT
+
+**Some of The Most Important SQL Commands**
+
+- **SELECT** - extracts data from a database
+- **UPDATE** - updates data in a database
+- **DELETE** - deletes data from a database
+- **INSERT INTO** - inserts new data into a database
+- **CREATE DATABASE** - creates a new database
+- **ALTER DATABASE** - modifies a database
+- **CREATE TABLE** - creates a new table
+- **ALTER TABLE** - modifies a table
+- **DROP TABLE** - deletes a table
+- **CREATE INDEX** - creates an index (search key)
+DROP INDEX - deletes an index
+
+## SELECT DICTINCT Statement
+
+The **SELECT DISTINCT** statement is used to return only distinct (different) values.
+```
+SELECT DISTINCT column1, column2, ... FROM table_name;
+```
+## SQL WHERE Clause
+
+The **WHERE** clause is used to filter records.
+
+```
+SELECT column1, column2, ... FROM table_name WHERE condition;
+```
+Operators in The WHERE Clause:
+
+| Operator | Description |
+| -------- | ----------- |
+| = | Equal |
+| > | Greater than |
+| < | Less than |
+| >= | Greater than or equal |
+| <= | Less than or equal |
+| <> | Not equal. Note: In some versions of SQL this operator may be written as != |
+| BETWEEN | Between a certain range |
+| LIKE | Search for a pattern |
+| IN | To specify multiple possible values for a column |
+
+
+## SQL AND, OR and NOT Operators
+

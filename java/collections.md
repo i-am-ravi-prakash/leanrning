@@ -262,3 +262,43 @@ public static Set synchronizedSet(Set set);
 
 public static Map synchronizedMap(Map map);
 ```
+
+
+# LinkedList
+
+This is the implementation class of List interface.
+
+- The underlying data structure of LinkedList is doubly LinkedList.
+- Duplicates are allowed.
+- Insertion order is maintained.
+- Heteregeneous objects are allowed.
+- Null insertion is possible.
+- LinkedList implements Serializable and Cloneable interface but not RandomAccess interface. RandomAccess interface is only implemented by ArrayList and Vector.
+- LinkedList is the best choise if the frequent operation is insertion and deletion from any random index.
+- LinkedList is the worst choise if the frequent operation is retrieval because retrieval of data starts from 0th index in case of LinkedList.
+
+We can use LinkedList to implement Stack and Queue. To provide support for this requirement, LinkedList provide below methods:
+
+```
+void addFirst(Object obj);
+void addLast(Object obj);
+Object getFirst();
+Object getLast();
+Object removeFirst();
+Object removeLast();
+```
+
+**NOTE**: The above mentioned methods are only available for LinkedList class.
+
+**Various constructors available in LinkedList**
+
+```
+LinkedList ll = new LinkedList();
+```
+This will create a linkedlist.
+
+```
+LinkedList ll = new LinkedList(Collection c);
+```
+This will create an equivalent linkedlist for any given collection.
+

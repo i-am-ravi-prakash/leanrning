@@ -201,3 +201,64 @@ This is the implementation class of List interface.
 - Insertion order is maintained.
 - Heteregeneous objects are allowed.
 - Null insertion is possible.
+
+**NOTE**: Heterogeneous objects are allowed in all Collections except TreeMap and TreeSet. In TreeMap and TreeSet, objects are stored in sorted order and for storing in sorted order, objects will be compared which possible only when objects are homogeneous.
+
+
+**Different constructors used in ArrayList**:
+
+1. ArrayList al = new ArrayList();
+
+It creates an empty ArrayList with default initial capacity of 10. Once ArrayList reaches its max capacity and we try to insert more data into it, a new ArrayList will be created with the below new capacity:
+
+new capacity = (current capacity * 3/2) + 1
+
+2. ArrayList al = new ArrayList(int size)
+
+It'll create an empty ArrayList of the given size.
+
+3. ArrayList al = new ArrayList(Collections c)
+
+It'll create an ArrayList as any given vector or LinkedList.
+
+**NOTE**: Usually we use Collections to hold and transfer objects from one place to another. To provide support for this requirement every Collection already implements Serializable and Cloneable interface.
+
+Only ArrayList and Vector implements RandomAccess interface so that we can access any random elements with the same speed. RandomAccess interface is available in java.util package.
+RandomAccess interface doesn't contain any methods and it's a marker interface.
+
+- ArrayList is the best choise if the frequent operation is retrieval of elements because ArrayList implements RandomAccess interface.
+- ArrayList is the worst choise if the frequent operation is insertion or deletion in middle or any random place because of shifting of rest of the elements.
+
+
+### Difference between Arraylist and Vector
+
+| ArrayList | Vector |
+| --------- | ------ |
+| Every method available in ArrayList is non-synchronized. | Most of the methods available in Vector are synchronized. |
+| Multiple threads are allowed to operate on ArrayList at a time and that's why ArrayList is not thread safe. | Only one thread is allowed to operate on Vector at a time. And so Vector is thread safe.|
+| Threads don't need to operate on ArrayList, that's why relative performance of ArrayList is high. | Threads are required to wait to operate on Vector and hence the relative performance is low. |
+| Introduced in 1.2 version. | Introduced in 1.0 version. |
+
+**How to get synchronized version of Arraylist?**
+
+By default, ArrayList objects are non-synchronized. But we can get synchronized version of ArrayList by using synchronizedList() method of Collections class.
+```
+ArrayList arrayList = new ArrayList();
+```
+It'll create a non-synchronized arraylist object.
+```
+List list = Collections.synchronizedList(arrayList);
+```
+It'll take the reference of non-synchronized arraylist and create one synchronized list.
+
+```
+public static List synchronizedList(List list);
+```
+
+Similarly we can get the synchronized versions of Set and Map objects by using following methods of Collections class:
+
+```
+public static Set synchronizedSet(Set set);
+
+public static Map synchronizedMap(Map map);
+```

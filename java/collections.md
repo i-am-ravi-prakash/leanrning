@@ -236,7 +236,7 @@ RandomAccess interface doesn't contain any methods and it's a marker interface.
 | --------- | ------ |
 | Every method available in ArrayList is non-synchronized. | Most of the methods available in Vector are synchronized. |
 | Multiple threads are allowed to operate on ArrayList at a time and that's why ArrayList is not thread safe. | Only one thread is allowed to operate on Vector at a time. And so Vector is thread safe.|
-| Threads don't need to operate on ArrayList, that's why relative performance of ArrayList is high. | Threads are required to wait to operate on Vector and hence the relative performance is low. |
+| Threads don't need to wait to operate on ArrayList, that's why relative performance of ArrayList is high. | Threads are required to wait to operate on Vector and hence the relative performance is low. |
 | Introduced in 1.2 version. | Introduced in 1.0 version. |
 
 **How to get synchronized version of Arraylist?**

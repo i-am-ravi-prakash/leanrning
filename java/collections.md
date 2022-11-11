@@ -40,7 +40,7 @@ This is because the array size is fixed to be 10. And it can't be changed at the
 | Array is not recommended memory wise. | Collection is recommended memory wise. |
 | WRT preformance array is a good choice. | WRT preformance collection is not recommended. |
 | It can hold only homogeneous data. | It can hold both homogeneous and heterogeneous data. |
-| There is no underlying data structure for array. | Collections have been imoplemented on standard data structure. |
+| There is no underlying data structure for array. | Collections have been implemented on standard data structure. |
 | Array can hold both primitive data types and objects. | Collections can hold only object data types. |
 
 

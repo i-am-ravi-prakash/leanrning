@@ -207,18 +207,21 @@ This is the implementation class of List interface.
 
 **Different constructors used in ArrayList**:
 
-1. ArrayList al = new ArrayList();
-
+```
+ArrayList al = new ArrayList();
+```
 It creates an empty ArrayList with default initial capacity of 10. Once ArrayList reaches its max capacity and we try to insert more data into it, a new ArrayList will be created with the below new capacity:
 
 new capacity = (current capacity * 3/2) + 1
 
-2. ArrayList al = new ArrayList(int size)
-
+```
+ArrayList al = new ArrayList(int size)
+```
 It'll create an empty ArrayList of the given size.
 
-3. ArrayList al = new ArrayList(Collections c)
-
+```
+ArrayList al = new ArrayList(Collections c)
+```
 It'll create an ArrayList as any given vector or LinkedList.
 
 **NOTE**: Usually we use Collections to hold and transfer objects from one place to another. To provide support for this requirement every Collection already implements Serializable and Cloneable interface.

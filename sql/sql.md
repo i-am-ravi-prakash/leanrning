@@ -87,7 +87,7 @@ SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND
 SELECT column1, column2, ... FROM table_name WHERE condition1 OR condition2 OR condition3 ...;
 ```
 
-- The NOT operator displays a record if the condition(s) is NOT TRUE.
+- The **NOT** operator displays a record if the condition(s) is NOT TRUE.
 
 ```
 SELECT column1, column2, ... FROM table_name WHERE NOT condition;

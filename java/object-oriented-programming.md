@@ -66,3 +66,16 @@ It's defined as wrapping the data and code together as a single unit. It's a mec
 - Technically, in encapsulation data and variables in a class are hidden from any other classes and can only be access through any member methods of the class in which they are declared.
 - In encapsulation, data in a class is hidden from any other classes which is similar to what **data-hiding** does. So, the terms “encapsulation” and “data-hiding” are used interchangeably.
 - Encapsulation can be achieved by declaring all the variables in a class as private and writing public methods in the class to set and get the values of the variables.
+
+
+## Inheritance
+
+Inheritance is a very important concept in OOP. It allows one class to feature (methods and fields) of another class. Below are the frequently used terminologies in inheritannce:
+
+- **Superclass**: The class whose features are inherited by some other class. It's also called base class or parent class.
+- **Subclass**: It's the class which inherits the features of another class. It's also called child class.
+- **Reusability**: Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.
+
+
+## Polymorphism
+

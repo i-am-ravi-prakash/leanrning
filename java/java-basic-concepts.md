@@ -1,3 +1,9 @@
+# Contents
+
+1. Static and non-static members
+2. Access modifiers
+
+
 # Static Members
 
 
@@ -117,3 +123,16 @@ Inside constructor
 | Accessed using class name. | Accessed using object name. |
 | Static blocks are executed during class loading. | Non static blocks are executed during object creation. |
 | Memory is allocated and variables are initialized during class loading. | Memory is allocated and variables are initialized during object creation. |
+
+
+# Access Modifiers
+
+
+There are four different types of access modifiers in Java. These are:
+
+- **private**: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+- **public**: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+- **protected**: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+- **default**: The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+
+**NOTE**: Access modifiers can't be applied on blocks.

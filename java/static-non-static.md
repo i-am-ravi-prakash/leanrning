@@ -1,8 +1,11 @@
+# Static Members
+
+
 All static fields (variables or methods) are accessible at class level whereas non-static fields are accessible at object level. We don't need to create objects to access static fields but to access non-static fields we need to create objects.
 
 static fields are common for the entire class. Let's take an example of banking system. Balance or loan amount may be different for different users (objects) but the interest rates are same for alll the users. In this example, interest rate is static variable for this banking system.
 
-## static blocks
+## Static blocks
 
 We can exeucte some of the codes or block of codes just after class loading i.e. before **main()** method execution. We can put those lines of codes in a static block like below:
 
@@ -52,8 +55,55 @@ public class TestApp {
 ```
 
 ```
-**Output**:
+Output:
 Static Block 1
 Static Block 2
 Hello World
 ```
+
+
+# Non-Static Members
+
+
+Below are the non-static members:
+
+- Non static variables
+- Non static blocks
+- Non static user defined methods
+- Constructors
+
+**NOTE**: We need to create objects to access non-static members in the class.
+
+Below is the exmaple code for non static members:
+
+```
+public class NonStaticMembersDemo {
+    int num;
+    
+    NonStaticMembersDemo() {
+        System.out.println("Inside constructor");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Inside main method");
+        new NonStaticMembersDemo();
+    }
+    
+    {
+        System.out.println("Inside non static block");
+    }
+}
+```
+
+```
+Output:
+Inside main method
+Inside non static block
+Inside constructor
+```
+
+**NOTE**: 
+- Non static blocks are executed before constructor.
+- The key difference between static and non static blocks is that static block is executed only once when class is loaded, but non static blocks are executed as many times we create an object of the class.
+- If there is no user defined constructor, then Java compiler provides a default constructor.
+- Constructors don't have any return type. They return the memory addrress of the object created.

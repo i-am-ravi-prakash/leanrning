@@ -107,3 +107,13 @@ Inside constructor
 - The key difference between static and non static blocks is that static block is executed only once when class is loaded, but non static blocks are executed as many times we create an object of the class.
 - If there is no user defined constructor, then Java compiler provides a default constructor.
 - Constructors don't have any return type. They return the memory addrress of the object created.
+
+
+### Static vs Non Static
+
+| Static Members | Non Static Members|
+| -------------- | ----------------- |
+| Static members belong to class. | Non static members belong to objects. |
+| Accessed using class name. | Accessed using object name. |
+| Static blocks are executed during class loading. | Non static blocks are executed during object creation. |
+| Memory is allocated and variables are initialized during class loading. | Memory is allocated and variables are initialized during object creation. |

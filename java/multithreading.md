@@ -13,7 +13,7 @@
 
 ## Introduction
 
-Threads are basically the lightweight and smallest unit of processing that can be managed independently by a scheduler. It is considered the simplest way to take advantage of multiple CPUs available in a machine. They share the common address space and are independent of each other.
+Threads are basically the lightweight and smallest unit of processing that can be managed independently by a scheduler. It is considered the simplest way to take advantage of multiple CPUs available in a machine. Threads share the common address space and are independent of each other.
 
 - Multithreading in Java is a process of executing multiple threads simultaneously.
 - A thread is a lightweight sub-process, the smallest unit of processing.
@@ -32,7 +32,7 @@ Let's say IDM (Internet Download Manager) software is downloading three files fr
 
 - Allow the program to run continuously even if a part of it is blocked.
 - Allows to write effective programs that utilize maximum CPU time.
-- Increase use of CPU resources and reduce costs of maintenance.
+- Increase the use of CPU resources and reduce costs of maintenance.
 - If an exception occurs in a single thread, it will not affect other threads as threads are independent.
 
 **Difference between thread and process**
@@ -68,7 +68,7 @@ public class MyThreadI implements Runnable{
         threadI.start();
     }
 
-	@Override
+    @Override
     public void run() {
         for (int i = 0; i <= 10; i++) {
             System.out.println("Downloading reports.ppt. Progress ... " + (i * 10) + "%");

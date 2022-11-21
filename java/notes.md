@@ -16,4 +16,38 @@ Output:
 true
 ```
 
-An object of subclass type is also a type of parent class. For example, if Dog extends Animal then object of Dog can be referred by either Dog or Animal class.
+An object of subclass type is also a type of parent class. For example, if InstanceOfTest class extends ParentInstanceOfTest then object of ParentInstanceOfTest can be referred by either ParentInstanceOfTest or ParentParentInstanceOfTest class.
+
+```
+class ParentInstanceOfTest{
+    
+}
+
+public class InstanceOfTest extends ParentInstanceOfTest{
+    public static void main(String[] args) {
+        InstanceOfTest instanceOfTest = new InstanceOfTest();
+        System.out.print(instanceOfTest instanceof ParentInstanceOfTest);
+    }
+}
+```
+
+Output:
+```
+true
+```
+
+If we apply instanceof operator with a variable that have null value, it returns false.
+
+```
+public class InstanceOfTest{
+    public static void main(String[] args) {
+        InstanceOfTest instanceOfTest = null;
+        System.out.print(instanceOfTest instanceof InstanceOfTest);
+    }
+}
+```
+
+Output:
+```
+false
+```

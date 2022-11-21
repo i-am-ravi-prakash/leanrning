@@ -1,11 +1,12 @@
-# Contents
+# Chapter
 
-1. Scale from zero to million of users
+**1. Scale from zero to million of users**
 
 
-# Scale from zero to million of users
+# 1. Scale from zero to million of users
 
 > A journey of a thousand miles begin with a single step, and building a complex system is no different.
+
 
 ### Single Server Setup
 
@@ -21,6 +22,7 @@ The request flow os the above single server setup is as follows:
 4. The web server returns HTML page or JSON response for rendering.
 
 **NOTE**: Web server can receive traffic from two sources: mobile application or web application.
+
 
 ### Database
 
@@ -46,3 +48,34 @@ Non-relational databases might be the right choise if:
 - the application requires super low latency.
 - the data is unstructured abd there's no relational data.
 - there's a need to store a massive amount of data.
+
+
+### Vertical Scaling vs Horizontal Scaling
+
+Vertical scaling, also referred to as "scale up", means the process of adding more power (CPU, memory) to the existing server. Horizontal scaling, also referred to as "scale out" means adding more servers into the resource pool.
+
+When traffic is low, vertical scaling is preferred and simplicity of vertical scaling is its main advantage. But it comes with some serious limitations:
+
+- Vertical scaling has a hardware limit. It's impossible to add unlimited CPU or memory to a single server.
+- Vertical scaling does not have failover and redundancy. If one server goes down, the whole website/app goes down with it.
+
+Horizontal scaling is more desirable for large applications due to the limitations of vertical scaling.
+
+
+### Load Balancer
+
+<img width="616" alt="Screenshot 2022-11-22 at 1 00 01 AM" src="https://user-images.githubusercontent.com/84272788/203142561-5ef4dd28-fc7b-4f38-b244-5db8e631072c.png">
+
+
+Details are explained below:
+- If server 1 goes offline, all the traffic wil be routed to server 2. This prevents the website from going offline.
+- If the website traffic grows rapidly, and two servers are not enough to handle the incoming traffic, then we can add more web server to the existing resource pool and the load balancer will start routing traffic to the newly added web server.
+
+A load balancer evenly distributes incoming traffic among web servers that are defined in a load-balanced set. Users connect to the public IP of the load balancer directly. Load balancer will communicate to different web servers using private IP which is completely unreachable by clients anymore. A private IP is an IP address reachable only between servers within the same network.
+
+
+## Database Replication
+
+> Database replication can be used in many database management systems, usually with a master/slave relationship between the original (master) and the copies (slaves).
+
+<img width="511" alt="Screenshot 2022-11-22 at 1 19 58 AM" src="https://user-images.githubusercontent.com/84272788/203145874-d1078f1e-daae-4d96-9450-2e816503b29c.png">

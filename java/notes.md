@@ -51,3 +51,18 @@ Output:
 ```
 false
 ```
+
+When Subclass type refers to the object of Parent class, it is known as downcasting. If we perform it directly, compiler gives Compilation error. If you perform it by typecasting, ClassCastException is thrown at runtime.
+
+```
+public class InstanceOfTest extends ParentInstanceOfTest{
+    public static void main(String[] args) {
+        InstanceOfTest instanceOfTest = new ParentInstanceOfTest(); // compile time error
+        InstanceOfTest instanceOfTest = (InstanceOfTest) new ParentInstanceOfTest(); // compiled successfuly but ClassCastException is thrown at runtime
+        System.out.print(instanceOfTest instanceof InstanceOfTest);
+    }
+}
+```
+
+Let's see the example, where downcasting is possible by instanceof operator.
+

@@ -116,3 +116,18 @@ After receiving a request, a web server first checks if the cache has the availa
 - **Eviction policy**: Once the cache is full, any request to add items to the cache might cause existing items to be removed. This is called cache eviction. Least-recently-used (LRU) is the most popular cache eviction policy. Other evictions policies like Least Frequently Used (LFU) or First In First Out (FIFO) can be adopted to satisfy different use case.
 
 Reference study: [Scaling Memcache at Facebook](https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final170_update.pdf)
+
+
+### Content Delivery Network (CDN)
+
+A CDN is a network of geographically dispersed servers used to deliver static contents. CDN servers cache static contents like image, videos, files, etc.
+
+When a user visits a website, a CDN server closest to the user will deliver static contents. If the CDN servers are in India, users in China or Russia will get contents faster than users in America.
+
+
+<img width="740" alt="Screenshot 2022-11-22 at 11 31 13 PM" src="https://user-images.githubusercontent.com/84272788/203388878-3d9379ca-c3f0-4b00-8a7d-0c80ed7cf189.png">
+
+
+CDN is similar to cache memory with one difference that CDN store static contents like image, video, files, etc.
+
+

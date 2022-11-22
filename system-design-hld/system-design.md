@@ -79,3 +79,20 @@ A load balancer evenly distributes incoming traffic among web servers that are d
 > Database replication can be used in many database management systems, usually with a master/slave relationship between the original (master) and the copies (slaves).
 
 <img width="511" alt="Screenshot 2022-11-22 at 1 19 58 AM" src="https://user-images.githubusercontent.com/84272788/203145874-d1078f1e-daae-4d96-9450-2e816503b29c.png">
+
+Advantages of database replication:
+
+- **Better Performance**: In the master-slave model, all write and update operations happens in master nodes; whereas all read operations are distributed across slave nodes. This model improves the performance because it allows more queries to be processed in parallel.
+- **Reliability**: If one of the databases is destroyed because of some natural disaster, data is still preserved in other nodes because data is replicated across multiple locations or nodes.
+- **high Availibility**: By replicating data across different location, the website remains in operation even if a database is offline as we can access data stored in another database server.
+
+Let's see what really happens if one of the databases goes offline:
+
+- If only one slave database is available and that also goes offline, read operations will be redirected to the master database temporarily. As soon as the issue is found, a new slave database will replace the old one. In case multiple salve databases are available, read operations are redirected to other healthy databases.
+- If the master database goes offline a slave database will be promoted to the new master. All the read/update operations will be temporarily executed on the new master database. A new slave database will replace the old one for data replication immediately.
+- In production systems, promoting a new master is more complicated as the data in a slace database might not be up to date. The missing data needs to be updated by running data recovery scripts.
+
+
+Below design shows the system design after adding the load balancer and database replication:
+
+<img width="450" alt="Screenshot 2022-11-22 at 8 38 00 AM" src="https://user-images.githubusercontent.com/84272788/203211657-8c3d490c-e3f7-4063-a66a-5534bef023a5.png">

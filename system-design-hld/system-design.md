@@ -74,7 +74,7 @@ Details are explained below:
 A load balancer evenly distributes incoming traffic among web servers that are defined in a load-balanced set. Users connect to the public IP of the load balancer directly. Load balancer will communicate to different web servers using private IP which is completely unreachable by clients anymore. A private IP is an IP address reachable only between servers within the same network.
 
 
-## Database Replication
+### Database Replication
 
 > Database replication can be used in many database management systems, usually with a master/slave relationship between the original (master) and the copies (slaves).
 
@@ -96,3 +96,23 @@ Let's see what really happens if one of the databases goes offline:
 Below design shows the system design after adding the load balancer and database replication:
 
 <img width="450" alt="Screenshot 2022-11-22 at 8 38 00 AM" src="https://user-images.githubusercontent.com/84272788/203211657-8c3d490c-e3f7-4063-a66a-5534bef023a5.png">
+
+
+### Cache
+
+A cache is a temporary storage area that stores the result of most expensive response or frequently accessed data in memory so that subsequent requests are served more quickly. The application performance is greatly affected by calling database repeatedly.
+
+The cache tier is a temporary data store layer, much faster than the database. The benefits of having cache tier include better system performance, ability to reduce database workloads and the ability to scale cache tier independently.
+
+<img width="635" alt="Screenshot 2022-11-22 at 9 20 31 AM" src="https://user-images.githubusercontent.com/84272788/203216962-68011cb5-0975-490f-93df-dbd0c1002188.png">
+
+After receiving a request, a web server first checks if the cache has the available response. If it has, it sends data back to the client. If the cache doesn't have the required response, web server queries the database, stores the response in the cache, and sends it back to the client. This caching strategy is called read-through cache.
+
+**Considerations for using cache**
+
+- **Decide when to use cache**: Consider using cache when data is read frequently and modified infrequently. Cached data is stored in volatile memory, all data in memory is lost if the server is restarted. Thus, important data should be saved in persistent data stored.
+- **Expiration policy**: When cache data is expired, it should be removed from the cache memory otherwise it'll take space in cache memory unnecessarily. It's advisable not to make the expiration date too short as this will cause the system to load data from database frequently. Meanwhile, it's advisable not to make the expiration date too long as the data can become stale.
+- **Consistancy**: This involves keeping the data store and the cache in sync. Inconsistancy can happen because data-modifying operations on the data store and cache are not in single transaction.
+- **Eviction policy**: Once the cache is full, any request to add items to the cache might cause existing items to be removed. This is called cache eviction. Least-recently-used (LRU) is the most popular cache eviction policy. Other evictions policies like Least Frequently Used (LFU) or First In First Out (FIFO) can be adopted to satisfy different use case.
+
+Reference study: [Scaling Memcache at Facebook](https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final170_update.pdf)

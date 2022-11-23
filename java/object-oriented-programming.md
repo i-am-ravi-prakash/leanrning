@@ -1,9 +1,102 @@
 # Object Oriented Programming
 
-Object Oriented Programming is a paradigm where we use objects to represent or write complex softwares. It aims to implement real world entities like hiding, inheritance, polymorphism, etc.
+# Java Source File Structure
 
+- In a java program file, there can be n numbers of classes.
+- In a java programe file, there can be at most one public class. If we try to make two classes public in the same java program file, we will get compile time error.
+- If there is no public class in the java program then we can give any file name to that program but if there exists any public class in the program then compulsory we should give filename as public class name. Let's say there are three classes A, B and C in a java program and class A is public class then java program file name should be A.java.
+- When we compile any java program, then for every class present in the program one separate .class file will be generated.
+- When we run any class which doesn't have any main method, we will get compile time error saying main method not found in class class_name.
 
-### Access Modifier
+```
+class A{
+    public static void main(String[] args){
+        System.out.println("A class main method");
+    }
+}
+
+class B{
+    public static void main(String[] args){
+        System.out.println("B class main method");
+    }
+}
+
+class C{
+    public static void main(String[] args){
+        System.out.println("C class main method");
+    }
+}
+
+class D{
+
+}
+```
+
+## Import statement
+
+There are two ways to use any outside class in a java program:
+
+- Fully qualified class name
+- Using import statement
+
+Let's say in a java file we have to use ArrayList. We can use any of the below approaches:
+
+**First approach: fully qualified class name**
+```
+public class Test {
+    public static void main(String[] args) {
+        java.util.ArrayList arrayList = new java.util.ArrayList();
+        
+        System.out.println("Compiled successfully");
+    }
+}
+```
+
+**Second approach: using import statement**
+```
+import java.util.ArrayList;
+
+public class Test {
+    public static void main(String[] args) {
+        ArrayList arrayList = new ArrayList();
+        
+        System.out.println("Compiled successfully");
+    }
+}
+```
+
+There are two types of import:
+
+1. Explicit import: When we mention the complete class name in the import statement it's class explicit import.
+    e.g. import java.util.ArrayList;
+2. Implicit import: When we don't mention the class name explicitly in the import statement.
+    e.g. import java.util.*;
+    
+**Important**:
+- We don't need to import classes present in the current working directory or package.
+- We don't need to import **java.lang** package. All classes and interfaces present inside java.lang package are available in every java program by default.
+- If we are importing any package, then all classes and interfaces present in that package will be available but not sub-package classes or interfaces. If we have to use any sub-package class or interface then we have to write import statement till sub-package level.
+- In any java source file, at most one package is allowed.
+- In java program, package statement should be the first statement.
+
+# Class Level Modifier
+
+Below modifiers are available for top level classes:
+1. public: if a class is public, then it can be accessed from anywhere or any package.
+2. default: default classes can be accessed only from the current package, not from other package.
+3. abstract
+4. final
+5. strictfp
+
+Below modifiers are available for inner classes:
+1. public
+2. default
+3. abstract
+4. final
+5. strictfp
+6. private
+7. static
+8. protected
 
 It defines the access type of methods or variables i.e. from where we can access these in our Java application. In Java, we have four types of access modifiers:
 

@@ -172,4 +172,3 @@ Inheritance is a very important concept in OOP. It allows one class to use featu
 **NOTE**: Every class in Java extends java.lang.Object class by default.
 
 ## Polymorphism
-

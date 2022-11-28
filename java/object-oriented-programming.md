@@ -98,6 +98,15 @@ Below modifiers are available for inner classes:
 7. static
 8. protected
 
+
+## Abstract
+
+- Abstract keyword is applicable only for methods and classes.
+- Abstract method has declaration only not the implementation.
+- Abstract methods should end with ";" not "{ }".
+- Child class inheriting abstract class is responsible for providing abstract method implementation.
+- If a class contains at least one abstract method, then the class must be declared as abstract class.
+
 It defines the access type of methods or variables i.e. from where we can access these in our Java application. In Java, we have four types of access modifiers:
 
 - **public**: Accessible in all classes in your application.

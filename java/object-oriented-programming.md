@@ -99,13 +99,73 @@ Below modifiers are available for inner classes:
 8. protected
 
 
-## Abstract
+## Abstract Method
 
 - Abstract keyword is applicable only for methods and classes.
 - Abstract method has declaration only not the implementation.
 - Abstract methods should end with ";" not "{ }".
 - Child class inheriting abstract class is responsible for providing abstract method implementation.
 - If a class contains at least one abstract method, then the class must be declared as abstract class.
+
+## Abstract Class
+
+- A class which is declared with the abstract keyword is known as an abstract class in Java.
+- It can have abstract and non-abstract methods (method with the body).
+- It cannot be instantiated.
+- It can have constructors and static methods also.
+- It can have final methods which will force the subclass not to change the body of the method.
+- Abstract class can have zero abstract methods also.
+
+
+Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+
+Another way, it shows only essential things to the user and hides the internal details, for example, sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery. Abstraction lets you focus on what the object does instead of how it does it.
+
+
+```
+abstract class Bike {
+    // constructor
+    Bike() {
+        System.out.println("bike is created");
+    }
+    
+    // abstract method
+    abstract void run();
+    
+    // non-abstract method
+    void changeGear() {
+        System.out.println("gear changed");
+    }
+}
+
+class Honda extends Bike {
+    
+    void run() {
+        System.out.println("running safely..");
+    }
+}
+
+public class TestAbstraction {
+    
+    public static void main(String args[]) {
+        
+        Bike obj = new Honda();
+        obj.run();
+        obj.changeGear();
+    }
+}
+```
+
+Output:
+```
+bike is created
+running safely..
+gear changed
+```
+
+**NOTE**: If you are extending an abstract class that has an abstract method, you must either provide the implementation of the method or make this class abstract.
+
+
 
 It defines the access type of methods or variables i.e. from where we can access these in our Java application. In Java, we have four types of access modifiers:
 

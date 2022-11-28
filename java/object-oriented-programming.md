@@ -166,14 +166,57 @@ gear changed
 **NOTE**: If you are extending an abstract class that has an abstract method, you must either provide the implementation of the method or make this class abstract.
 
 
+## Members Modifiers
 
 It defines the access type of methods or variables i.e. from where we can access these in our Java application. In Java, we have four types of access modifiers:
 
 - **public**: Accessible in all classes in your application.
-- **protected**: Accessible within the package in which it is defined and in its subclass(es) (including subclasses declared outside the package).
+- **protected**: Accessible within the package in which it is defined and in its child classes.
 - **private**: Accessible only within the class in which it is defined.
-- **default** (declared/defined without using any modifier): Accessible within the same class and package within which its class is defined.
+- **default** (declared/defined without using any modifier): Accessible within the same class or same package within which its class is defined.
 
+### Protected
+
+- Protected members/methods can be accessed only in the same package classes and if we want to access protected members/methods outside of current package, then it will be accessible only in child classes.
+- Outside the current package, protected members/methods are accessible only with child class reference not with parent class reference. See the below example to understand this.
+
+
+```
+package pack1;
+
+class Parent{
+    protected method(){
+        System.out.println("Parent class protected method");
+    }
+}
+
+package pack2;
+
+public class Test{
+    public static void main(String[] args){
+        Parent parent = new Parent();
+        parent.method();    //  gives compile time error
+        
+        Test test = new Test();
+        test.method();
+        
+        Parent parent1 = new Test();
+        parent1.method();    //  gives compile time error
+    }
+}
+```
+
+
+**NOTE**: Outside the current package, only child class reference can be used to access protected members/methods.
+
+
+| Visibility | public | protected | default | private |
+| ---------- | ------ | --------- | ------- | ------- |
+| Within the same class | Yes| Yes | Yes | Yes |
+| Child class of same package | Yes| Yes | Yes | No |
+| Non-child class of same package | Yes| Yes | Yes | No |
+| Child class of outside package | Yes| Yes | No (only with child reference) | No |
+| Non-child class of outside package | Yes| No | No | No |
 
 ### Message Passing
 

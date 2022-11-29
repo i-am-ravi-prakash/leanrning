@@ -372,7 +372,13 @@ If we observe this example carefully, we can see that ATM machine is only displa
 
 # Inheritance
 
-Inheritance is a very important concept in OOP. It allows one class to use features (methods and fields) of another class. Below are the frequently used terminologies in inheritance:
+Inheritance is a very important concept in OOP. It allows one class to use features (methods and fields) of another class. 
+
+- It's also called IS-A relationship.
+- Its main advantage is code reusability.
+- **extends** keyword is used to implement inheritance.
+
+Below are the frequently used terminologies in inheritance:
 
 - **Superclass**: The class whose features are inherited by some other class. It's also called base class or parent class.
 - **Subclass**: It's the class which inherits the features of another class. It's also called child class.
@@ -380,4 +386,43 @@ Inheritance is a very important concept in OOP. It allows one class to use featu
 
 **NOTE**: Every class in Java extends java.lang.Object class by default.
 
-## Polymorphism
+- All the members (variables and methods) of parent class are available to child class by default.
+- Parent class reference can't be used to call child specific methods or access child class specific variables.
+- Child class reference can be used to call both child specific methods as well as parent specific methods and variables.
+- Parent class reference can be used to hold child class object but still that parent class reference can't be used to call or access child class members (methods or variables).
+- Child class reference can't be used to hold parent class objects.
+
+
+```
+class Parent {
+    public void m1(){
+        System.out.println("Parent");
+    }
+}
+
+class Child extends Parent {
+    public void m2(){
+        System.out.println("Parent");
+    }
+}
+
+class Test {
+    public static void main(String[] args){
+        Parent p = new Parent();
+        p.m1();
+        p.m2();    // compile time error because parent reference can't be used to call child specific methods
+        
+        Child c = new Child();
+        c.m1();
+        c.m2();
+        
+        Parent p = new Child();
+        p.m1();
+        p.m2();    // compile time error because although parent class reference can be used to 
+                   // hold child objects but still that parent reference can be used to call child specific methods
+        
+        Child c = new Parent();    // compile time error: Incompatible type. Parent can't be connverted to Child
+                                   // because child class reference can never be used to hold parent class objects
+    }
+}
+```

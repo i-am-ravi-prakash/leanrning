@@ -271,6 +271,39 @@ class SubServiceProvider extends ServiceProvider{
 }
 ```
 
+
+# Data Hiding
+
+- External entities can't access the internal application data directly.
+- For implementing data hiding, it's recommended to declare variables as private.
+- The biggest advantage of data hiding is security
+
+
+# Encapsulation
+
+It's defined as wrapping the data members (variables) and data behaviours (methods) together as a single unit. It's a mechanism that binds together the code and data it manipulates.
+- Technically, in encapsulation methods and variables in a class are hidden from any other classes and can only be access through any member methods of the class in which they are declared.
+- In encapsulation, data in a class is hidden from any other classes which is similar to what **data-hiding** does. So, the terms “encapsulation” and “data-hiding” are used interchangeably.
+- Encapsulation can be achieved by declaring all the variables in a class as private and writing public methods in the class to set and get the values of the variables.
+- Encapsulation = Data hiding + Abstraction
+
+
+```
+class Account{
+    private double balance;
+    
+    public doubleGetbalance(){
+        accountValidation();
+        return balance;
+    }
+    
+    public void setBalance(double amount){
+        accountValidation();
+        this.balance = this.balance + amount;
+    }
+}
+```
+
 ### Message Passing
 
 Objects communicate with each other by sending or receiving information to each other. A message for an object is a request for execution of a procedure and therefore will invoke a function in the receiving object that generates the desired results.
@@ -316,14 +349,6 @@ Data abstraction may also be defined as the process of identifying only the requ
 Let's say I am withdrawing money from ATM. After I inserted the card in the machine one popup will display on the screen asking to select any option. I will select Withdraw Money option and put the required details like amount to be withdrawn and my ATM pin. After processing all the details, ATM will give me the money.
 
 If we observe this example carefully, we can see that ATM machine is only displaying the functionality. We don't know what was the internal internal implementation of withdrawing the money from ATM.
-
-
-## Encapsulation
-
-It's defined as wrapping the data and code together as a single unit. It's a mechanism that binds together the code and data it manipulates.
-- Technically, in encapsulation data and variables in a class are hidden from any other classes and can only be access through any member methods of the class in which they are declared.
-- In encapsulation, data in a class is hidden from any other classes which is similar to what **data-hiding** does. So, the terms “encapsulation” and “data-hiding” are used interchangeably.
-- Encapsulation can be achieved by declaring all the variables in a class as private and writing public methods in the class to set and get the values of the variables.
 
 
 # Inheritance

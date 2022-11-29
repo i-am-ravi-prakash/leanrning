@@ -305,6 +305,22 @@ class Account{
 ```
 
 
+## Tightly Encapsulated Class
+
+- A class is said to be tightly encapsulated if and only if all the variables inside that class are private.
+- If the parent class is not tightly encapsulated then child class also can't be tightly encapsulated class.
+
+
+```
+class Account{
+    private double balance;
+    private String accountNumber;
+    
+    public double getBalance(){
+        return balance;
+    }
+}
+```
 
 
 ### Message Passing

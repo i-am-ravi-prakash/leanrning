@@ -32,7 +32,7 @@ class D{
 }
 ```
 
-## Import statement
+# Import statement
 
 There are two ways to use any outside class in a java program:
 
@@ -99,6 +99,12 @@ Below modifiers are available for inner classes:
 8. protected
 
 
+# Abstraction
+
+Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+
+Another way, it shows only essential things to the user and hides the internal details, for example, sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery. Abstraction lets you focus on what the object does instead of how it does it.
+
 ## Abstract Method
 
 - Abstract keyword is applicable only for methods and classes.
@@ -115,11 +121,6 @@ Below modifiers are available for inner classes:
 - It can have constructors and static methods also.
 - It can have final methods which will force the subclass not to change the body of the method.
 - Abstract class can have zero abstract methods also.
-
-
-Abstraction is a process of hiding the implementation details and showing only functionality to the user.
-
-Another way, it shows only essential things to the user and hides the internal details, for example, sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery. Abstraction lets you focus on what the object does instead of how it does it.
 
 
 ```
@@ -166,7 +167,7 @@ gear changed
 **NOTE**: If you are extending an abstract class that has an abstract method, you must either provide the implementation of the method or make this class abstract.
 
 
-## Members Modifiers
+# Members Modifiers
 
 It defines the access type of methods or variables i.e. from where we can access these in our Java application. In Java, we have four types of access modifiers:
 
@@ -175,7 +176,7 @@ It defines the access type of methods or variables i.e. from where we can access
 - **private**: Accessible only within the class in which it is defined.
 - **default** (declared/defined without using any modifier): Accessible within the same class or same package within which its class is defined.
 
-### Protected
+## Protected
 
 - Protected members/methods can be accessed only in the same package classes and if we want to access protected members/methods outside of current package, then it will be accessible only in child classes.
 - Outside the current package, protected members/methods are accessible only with child class reference not with parent class reference. See the below example to understand this.
@@ -217,6 +218,58 @@ public class Test{
 | Non-child class of same package | Yes| Yes | Yes | No |
 | Child class of outside package | Yes| Yes | No (only with child reference) | No |
 | Non-child class of outside package | Yes| No | No | No |
+
+
+# Interface
+
+- Every method present inside the interface must be public and abstract (method with no body).
+- While providing method implementation, we can't reduce access visibility of methods. It means in the implementation class also we must declare interface method as public only.
+- The class implementing the interface must provide method implementation for all the method present inside interface.
+- If the class providing method implementation of interface is not able to provide implementation for all methods then that class must be declared abstract.
+- In case any abstract class implementing the interface is not able to provide method implementation of all methods then it's responsibility of child class of that abstract class to provide implementation for rest of the methods.
+
+
+```
+interface TestInterface{
+    public void m1();
+    
+    public void m1();
+}
+
+public class Test implements TestInterface{
+    @Override
+    public void m1() {
+        
+    }
+
+    @Override
+    public void m2() {
+        
+    }
+}
+```
+
+```
+interface Interface{
+    public void m1();
+    
+    public void m1();
+}
+
+abstract class ServiceProvider implements TestInterface{
+    @Override
+    public void m1() {
+        
+    }
+}
+
+class SubServiceProvider extends ServiceProvider{
+    @Override
+    public void m2() {
+        
+    }
+}
+```
 
 ### Message Passing
 

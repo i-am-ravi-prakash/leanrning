@@ -426,3 +426,72 @@ class Test {
     }
 }
 ```
+
+
+**Type of inheritance**
+
+1. **Single inheritance**: A single class inheriting a single class.
+
+```
+class A {
+    // TO-DO
+}
+
+class B extends A {
+    // TO-DO
+}
+```
+
+2. **Multiple inheritance**: A single class extending more that one class at a time.
+
+```
+class A {
+    // TO-Do
+}
+
+class B {
+    // TO-DO
+}
+
+class C extends A, B {
+    // TO-DO
+}
+```
+
+**NOTE**: Multiple inheritance is not supported by Java.
+
+3. **Multi-level inheritance**: When there is a heirarchy of inheritance, it's called multi-level inheritance.
+
+```
+class A {
+    // TO-DO
+}
+
+class B extends A {
+    // TO-DO
+}
+
+class C extends B {
+    // TO-DO
+}
+```
+
+4. **Heirarchical inheritance**: Multiple classes extending the features of a single class.
+
+```
+class A {
+    // TO-DO
+}
+
+class B extends A {
+    // TO-DO
+}
+
+class C extends A {
+    // TO-DO
+}
+
+class D extends A {
+    // TO-DO
+}
+```

@@ -495,3 +495,63 @@ class D extends A {
     // TO-DO
 }
 ```
+
+
+# static keyword
+
+The static keyword in Java is used for memory management mainly. We can apply static keyword with variables, methods, blocks and nested classes. The static keyword belongs to the class than an instance of the class.
+
+The static can be:
+
+1. variables
+2. methods
+3. blocks
+4. nested class
+
+
+## static variables
+
+- If we declare any variable as static, it's known as static variable.
+- Static variables get memory only once in the class area at the time of class loading.
+- Static variales can be used to refer the common property of all objects. e.g. Company name of all employess of a company
+
+
+## static methods
+
+- If you apply static keyword with any method, it is known as static method.
+- A static method belongs to the class rather than the object of a class.
+- A static method can be invoked without the need for creating an instance of a class.
+- A static method can access static data member and can change the value of it.
+
+In addition to the above points, there are certain limitations to static methods which are as follows:
+
+- Static methods cannot use non-static members or call non-static methods directly.
+- **this** and **super** cannot be used in static context.
+
+
+**Why is the Java main method static?**
+- Object is not required to call any static method. If the main method is not static then everytime JVM needs to create an object to call main method and it'll lead to the problem of extra memory allocation.
+
+
+## static block
+
+- It is used to initialize the static data member.
+- It is executed before the **main** method at the time of classloading.
+
+```
+class Test {
+    static {
+        System.out.println("Static block is invoked");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("main method is invoked");
+    }
+}
+```
+
+Output:
+```
+Static block is invoked
+main method is invoked
+```

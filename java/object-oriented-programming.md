@@ -555,3 +555,180 @@ Output:
 Static block is invoked
 main method is invoked
 ```
+
+
+# this keyword
+
+**this** is a reference variable which refers to the current object.
+
+## Usage of Java this keyword
+
+1. **this** can be used to refer current class instance variable.
+
+```
+class Users {
+    private String name;
+    private int age;
+    
+    public Users(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public void display() {
+        System.out.println("Name: " + name + " Age: " + age);
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Student student1 = new Student("Ravi", 24);
+        Student student2 = new Student("Suraj", 19);
+        
+        student1.display();
+        student2.display();
+    }
+}
+```
+
+Output:
+```
+Name: Ravi Age: 24
+Name: Suraj Age: 19
+```
+
+2. **this** can be used to invoke the current class method
+
+You may invoke the method of the current class by using the **this** keyword. If you don't use the this keyword, compiler automatically adds this keyword while invoking the method.
+
+```
+public class Test {
+    public static void main(String[] args) {
+        Test test = new Test();
+        test.m();
+    }
+    
+    public void m() {
+        System.out.println("m() method invoked");
+        this.n();
+    }
+    
+    public void n() {
+        System.out.println("n() method invoked");
+    }
+}
+```
+
+Output:
+```
+m() method invoked
+n() method invoked
+```
+
+3. **this()** can be used to invoke current class parameter
+
+```
+public class Test {
+    
+    public static void main(String[] args) {
+        App obj = new App(10);
+    }
+}
+
+
+class App {
+    
+    App() {
+        System.out.println("Constructor invoked");
+    }
+    
+    App(int _num) {
+        this();
+        System.out.println(_num);
+    }
+}
+```
+
+Output:
+```
+Constructor invoked
+10
+```
+
+**Real usage of this() constructor call**
+
+The this() constructor call should be used to reuse the constructor from the constructor. It maintains the chain between the constructors i.e. it is used for constructor chaining.
+
+```
+public class Test {
+    
+    public static void main(String[] args) {
+        Student s1 = new Student(111, "ankit", "java");
+        Student s2 = new Student(112, "sumit", "java", 6000f);
+        s1.display();
+        s2.display();
+    }
+}
+
+
+class Student {
+    
+    private int rollno;
+    private String name;
+    private String course;
+    private float fee;
+    
+    Student(int rollno, String name, String course) {
+        this.rollno = rollno;
+        this.name = name;
+        this.course = course;
+    }
+    
+    Student(int rollno, String name, String course, float fee) {
+        this(rollno, name, course);// reusing constructor
+        this.fee = fee;
+    }
+    
+    void display() {
+        System.out.println(rollno + " " + name + " " + course + " " + fee);
+    }
+}
+```
+
+Output:
+```
+111 ankit java 0.0
+112 sumit java 6000.0
+```
+
+**NOTE**: Call to **this()** must be the first statement in constructor.
+
+4. **this** can be passed as an arguement in the method
+
+```
+public class Test {
+    
+    public static void main(String[] args) {
+        Test test = new Test();
+        test.method1();
+    }
+    
+    public void method1() {
+        method2(this);
+    }
+    
+    public void method2(Test obj) {
+        System.out.println("Method is invoked");
+    }
+}
+```
+
+Output:
+```
+Method is invoked
+```
+
+5. **this** can be passed as argument in the constructor call
+
+6. **this** keyword can be used to return current class instance
+

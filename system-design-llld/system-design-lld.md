@@ -86,3 +86,56 @@ In a class diagram a class is represented with the help of a rectangular box hav
 
 **Relationships**
 
+The connection between the two classes in a class diagram is called a Relationship. A class may be involved in one or more relationships with other classes.
+
+<img width="547" alt="Screenshot 2023-01-03 at 9 22 59 PM" src="https://user-images.githubusercontent.com/84272788/210392932-8b57b39c-b0f5-4122-909e-d817272a5ad2.png">
+
+In the class diagram, the classes can be related to each other through Association, Generalization, Aggregation, or Composition.
+
+<img width="568" alt="Screenshot 2023-01-03 at 9 28 50 PM" src="https://user-images.githubusercontent.com/84272788/210393940-37eeb795-64f9-4513-bbd9-4968f95035cb.png">
+
+
+**Associations**
+
+In class diagrams, we can connect two classes with a solid line. This relationship is known as Association and shows that one class is associated with other classes.
+
+<img width="506" alt="Screenshot 2023-01-03 at 9 32 37 PM" src="https://user-images.githubusercontent.com/84272788/210394667-3afd05d9-2892-4751-9495-b24f212455f8.png">
+
+**Multiplicity**
+
+Multiplicity of Association tells us: how many objects of each class can take part in the relationship?
+
+**Aggregation**
+
+Let's understand Aggregation with the help of shown class diagram:
+
+Here we can see that two classes are connected with a solid line having an unfilled diamond at one end.
+
+<img width="546" alt="Screenshot 2023-01-03 at 9 47 01 PM" src="https://user-images.githubusercontent.com/84272788/210397005-97aed4af-ee74-4caf-b651-f5ba974ce25f.png">
+
+We can read this as Bank has a part locker. Or inversely we can say locker is a part of Bank
+
+This relationship is like a **whole-part relationship**, where class at the diamond end is the WHOLE thing or the Aggregate, whereas the class at the other end is a PART of the WHOLE thing.
+
+So whenever we need to represent any class that is a part of another class, we can use aggregation.
+Another example may be:
+
+<img width="570" alt="Screenshot 2023-01-03 at 9 49 22 PM" src="https://user-images.githubusercontent.com/84272788/210397446-0c8f6785-8327-4344-9157-9b26f1e4282a.png">
+
+**Composition**
+
+In the case of aggregation, we saw that two classes had a part-whole relationship i.e. one class was part of another class.
+
+Let’s see the previous example of bank and locker, here the locker is a part of the bank, but a locker has its own existence, i.e. locker can exist even if there is no bank.
+
+So, we can summarize that in the case of aggregation, the part can exist without the whole class also.
+
+Let's take another example.
+
+Just think of any bank account, the account always has a transaction history associated with it. So if we consider Bank account and transaction history as two different entities, we can say that transaction history is part of the Bank account.
+
+But if the bank account doesn’t exist, there will be no transaction history so this can not be represented with aggregation.
+
+Actually this is an example of composition. The composition is a stronger form of aggregation in which if the aggregate is destroyed, the parts are destroyed as well. We represent this with the help of a filled diamond as shown.
+
+<img width="626" alt="Screenshot 2023-01-03 at 9 58 24 PM" src="https://user-images.githubusercontent.com/84272788/210398958-f64402a9-724a-4888-8e1f-914f7022e2ab.png">

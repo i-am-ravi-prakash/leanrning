@@ -732,3 +732,96 @@ Method is invoked
 
 6. **this** keyword can be used to return current class instance
 
+
+# Polymorphism
+
+Polymorphism is a concept in Java which means performing a single action in many ways. Polymorphism is derived from 2 Greek words: poly and morphs. The word "poly" means many and "morphs" means forms. So polymorphism means many forms.
+
+There are two types of polymorphism in Java: compile-time polymorphism and runtime polymorphism. We can perform polymorphism in java by method overloading and method overriding.
+
+If you overload a static method in Java, it is the example of compile time polymorphism.
+
+Runtime polymorphism or Dynamic Method Dispatch is a process in which a call to an overridden method is resolved at runtime rather than compile-time.
+
+## Method Overloading
+
+If a class has multiple methods having same name but different in parameters, it is known as Method Overloading. Below is one such example:
+
+```
+public class Addition {
+    public static int sum(int x, int y) {
+        return x + y;
+    }
+    
+    public static double sum(int x, int y, int z) {
+        return x + y + z;
+    }
+}
+```
+OR
+
+```
+public class Addition {
+    public static int sum(int x, int y) {
+        return x + y;
+    }
+    
+    public static double sum(double x, double y) {
+        return x + y;
+    }
+}
+```
+
+There are two ways to overload the method in java
+
+1. By changing number of arguments
+2. By changing the data type
+
+**NOTE**: In Java, Method Overloading is not possible by changing the return type of the method only because of ambiguity.
+
+You can have any number of **main** methods in a class by method overloading. But JVM calls main() method which receives string array as arguments only.
+
+## Method Overloading and Type Promotion
+
+One type is promoted to another implicitly if no matching datatype is found. Let's understand the concept by the figure given below:
+
+![Capture](https://user-images.githubusercontent.com/84272788/211206086-67a3960f-ae5a-478c-b930-40792c577572.PNG)
+
+```
+public class OverloadingDemo {
+    void sum(int a, long b) {
+        System.out.println(a + b);
+    }
+    
+    void sum(int a, int b, int c) {
+        System.out.println(a + b + c);
+    }
+    
+    public static void main(String args[]) {
+        OverloadingDemo obj = new OverloadingDemo();
+        obj.sum(20, 20);// now second int literal will be promoted to long
+        obj.sum(20, 20, 20);
+    }
+}
+```
+
+Output:
+```
+40
+60
+```
+
+**NOTE**: If there are matching type arguments in the method, type promotion is not performed. If there are no matching type arguments in the method, and each method promotes similar number of arguments, there will be ambiguity.
+
+
+## Method Overriding
+
+If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+
+In other words, if a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding.
+
+**Rules for Java Method Overriding**:
+
+1. The method must have the same name as in the parent class
+2. The method must have the same parameter as in the parent class.
+3. There must be an IS-A relationship (inheritance).

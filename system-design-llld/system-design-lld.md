@@ -103,7 +103,7 @@ In class diagrams, we can connect two classes with a solid line. This relationsh
 
 **Multiplicity**
 
-Multiplicity of Association tells us: how many objects of each class can take part in the relationship?
+Multiplicity of Association tells us: how many objects of each class can take part in the relationship.
 
 **Aggregation**
 

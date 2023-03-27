@@ -86,7 +86,7 @@ class C extends A, B {
 
 **NOTE**: Multiple inheritance is not supported in Java.
 
-3. **Multi-level inheritance**: When there is a heirarchy of inheritance, it's called multi-level inheritance.
+3. **Heirarchical inheritance**: When there is a heirarchy of inheritance, it's called multi-level inheritance.
 
 ```
 class A {
@@ -102,7 +102,7 @@ class C extends B {
 }
 ```
 
-4. **Heirarchical inheritance**: Multiple classes extending the features of a single class.
+4. **Multi-level inheritance**: Multiple classes extending the features of a single class.
 
 ```
 class A {

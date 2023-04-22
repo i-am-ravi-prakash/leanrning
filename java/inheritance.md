@@ -143,4 +143,9 @@ class B extends A{
 **NOTE:** Cyclic inheritance is not allowed in Java or any programming language.
 
 
-## Important points to 
+## Important points to remember
+
+- If a class doesn't extend any other class then by default it's a direct child of Object class. But if any class is extending and other class then that class is an indirect child of Object class.
+- Two keywords can be used to implement or accomplish inheritance:
+    1. **extends:** The keyword extends is used to create an inheritance relationship between two classes and two interfaces.
+    2. **implements:** The term "implements" establishes the line of descent between a class and an interface.

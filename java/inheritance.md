@@ -84,9 +84,9 @@ class C extends A, B {
 }
 ```
 
-**NOTE**: Multiple inheritance is not supported in Java.
+**NOTE**: Multiple inheritance is not supported in Java wrt class but it's allowed wrt interface.
 
-3. **Heirarchical inheritance**: When there is a heirarchy of inheritance, it's called multi-level inheritance.
+3. **Heirarchical inheritance**: When there is a heirarchy of inheritance.
 
 ```
 class A {
@@ -121,3 +121,26 @@ class D extends A {
     // TO-DO
 }
 ```
+
+5. **Cyclic inheritance**: When there is a cycle in inheritance, it's called cyclic inheritance. Cyclic inheritance can occur in the following two ways:
+
+```
+class A extends A{
+    // TO-DO
+}
+```
+
+```
+class A extends B{
+    // TO-DO
+}
+
+class B extends A{
+    // TO-DO
+}
+```
+
+**NOTE:** Cyclic inheritance is not allowed in Java or any programming language.
+
+
+## Important points to 
